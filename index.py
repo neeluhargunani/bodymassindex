@@ -4,10 +4,10 @@ import pymysql
 
 class MyClass():
     def __init__(self):
-        host = "localhost"
-        user = "root"
-        password = "webcreationz@1234"
-        database = "db1"
+        host = "localhost",
+        user = "root",
+        password = "webcreationz@1234",
+        database = "db1",
         self.con = pymysql.connect(host=host, user=user, password=password,
                                    database=database, cursorclass=pymysql.cursors.DictCursor)
         self.cur = self.con.cursor()
