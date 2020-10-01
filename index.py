@@ -15,7 +15,7 @@ def calculator():
         if bmi < 18.5:
             bmi = f"Hello {name} Your {bmi} weight is underweight..! you need to follow the healthy tips below"
         elif bmi < 26:
-            bmi = f"Hello {name} Hurrayy....we are happy to inform...! your {bmi} weight has optimal (normal) weight"
+            bmi = f"Hello {name} we are happy to inform...! your {bmi} weight has optimal (normal) weight"
         else:
             bmi = f"Hello {name} Your {bmi} weight is overweight..! you need to follow the healthy tips below"
 

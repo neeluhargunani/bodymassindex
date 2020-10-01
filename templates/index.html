@@ -48,13 +48,13 @@
 											</form>
 										</div>
 										<div class="card-footer ">
-{% if bmi %}
+                               {% if bmi %}
 
 											<h4 class="p-2 text-dark" >
 												<a href="#accordion" style="text-decoration :none"> {{bmi}}</a>
 											</h4>
 
-{% endif %}
+                                         {% endif %}
 
 
 										</div>
@@ -71,21 +71,21 @@
 													<th>centimeters</th>
 												</tr>
 											</thead>
-    {% if results  %}
+                                           {% if results  %}
 
 											<tbody>
-     {% for row in results %}
+                                                {% for row in results %}
 
 												<tr>
 													<td>{{row.ftin }}</td>
 													<td>{{row.inches }}</td>
 													<td>{{row.centimeters }}</td>
 												</tr>
-     {% endfor %}
+                                             {% endfor %}
 
 											</tbody>
 
-         {% endif %}
+                                            {% endif %}
 
 
 
@@ -113,22 +113,19 @@
 													<h6 class="text-primary">If your BMI is
 														<mark class="bg-success text-white">between 22 and 25:</mark> Healthy Weight
 													</h6>
-													<p class="mt-2 text-dark">This is still considered an acceptable range, and is associated with good health.
-</p>
+													<p class="mt-2 text-dark">This is still considered an acceptable range, and is associated with good health.</p>
 												</li>
 												<li class="list-group-item mt-2 py-1">
 													<h6  class="text-primary">If your BMI is
 														<mark class="bg-warning text-white">between 25 and 30:</mark> Overweight
 													</h6>
-													<p class="mt-2 text-dark">You are considered overweight and should finds ways to lower your weight, through diet and exercise.
-</p>
+													<p class="mt-2 text-dark">You are considered overweight and should finds ways to lower your weight, through diet and exercise.</p>
 												</li>
 												<li class="list-group-item mt-2 py-1">
 													<h6 class="text-primary">If your BMI is
 														<mark class="bg-danger text-white">over 30:</mark> Significantly Overweight
 													</h6>
-													<p class="mt-2 text-dark">This indicates an unhealthy condition,You should lose weight by changing your diet and exercising more.
-</p>
+													<p class="mt-2 text-dark">This indicates an unhealthy condition,You should lose weight by changing your diet and exercising more.</p>
 												</li>
 												<li class="list-group-item mt-2 py-1">
 													<h6 class="text-primary">If your BMI is
