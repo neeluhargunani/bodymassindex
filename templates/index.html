@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="wrap">
+	<div class="container mt-5 ">
+		<div class="row">
+			<div class="col-md-9 col-xl-9 col-lg-9 col-sm-12 m-auto">
+				<div class="page-header text-center">
+					<h3>
+						<b>BODY MASS INDEX CALCULATOR</b>
+					</h3>
+				</div>
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs mt-5">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#bmicalculator">
+							<h6>bmi calculator</h6>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#height">
+							<h6>height in cm</h6>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#details">
+							<h6>How IT Works</h6>
+						</a>
+					</li>
+				</ul>
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div id="bmicalculator" class="container tab-pane active">
+						<h4 class="mt-3">Calculation of body mass index</h4>
+						<div class="card mt-3">
+							<div class="card-header crd">healthy weight calculator</div>
+							<div class="card-body">
+								<form class="form-group py-3" action="/" method="post">
+									<label for="name">Enter Your Name:</label>
+									<input type="text" class="form-control mb-4"  id="name" name="name">
+										<label for="num1">Enter Your weight(kg):</label>
+										<input type="text" class="form-control mb-4" id="num1" name="weight">
+											<label for="num2">Enter Your height(cm):</label>
+											<input type="text" class="form-control mb-4"  id="num2" name="height">
+												<button type="submit" class="btn btn-lg btn-primary mt-4" value="Submit">Calculate</button>
+												<button type="reset" class="btn btn-lg btn-secondary mt-4" value="Reset">Reset</button>
+											</form>
+										</div>
+										<div class="card-footer ">
+{% if bmi %}
+
+											<h4 class="p-2 text-dark" >
+												<a href="#accordion" style="text-decoration :none"> {{bmi}}</a>
+											</h4>
+
+{% endif %}
+
+
+										</div>
+									</div>
+								</div>
+								<div id="height" class="container tab-pane fade">
+									<h4 class="mt-3">height In cms </h4>
+									<div class ="table-responsive">
+										<table class="table table-striped">
+											<thead class="crd">
+												<tr>
+													<th>ftin</th>
+													<th>inches</th>
+													<th>centimeters</th>
+												</tr>
+											</thead>
+    {% if results  %}
+
+											<tbody>
+     {% for row in results %}
+
+												<tr>
+													<td>{{row.ftin }}</td>
+													<td>{{row.inches }}</td>
+													<td>{{row.centimeters }}</td>
+												</tr>
+     {% endfor %}
+
+											</tbody>
+
+         {% endif %}
+
+
+
+										</table>
+									</div>
+								</div>
+								<div id="details" class="container tab-pane fade">
+									<h4 class="mt-3">How It Works </h4>
+									<div class="card bshdow">
+										<div class="card-body">
+											<ul class="list-group list-group-flush">
+												<li class="list-group-item py-1 ">
+													<h6 class="text-primary">If your BMI is
+														<mark class="bg-info text-white">below 20:</mark> Under Weight
+													</h6>
+													<p class="mt-2 text-dark">This indicates a lean BMI, which means you have a low amount of body fat. </p>
+												</li>
+												<li class="list-group-item mt-2 py-1">
+													<h6  class="text-primary">If your BMI is
+														<mark class="bg-success text-white">between 20 and 22:</mark> Healthy Weight
+													</h6>
+													<p class="mt-2 text-dark">This indicates the ideal, healthy amount of body fat </p>
+												</li>
+												<li class="list-group-item mt-2 py-1">
+													<h6 class="text-primary">If your BMI is
+														<mark class="bg-success text-white">between 22 and 25:</mark> Healthy Weight
+													</h6>
+													<p class="mt-2 text-dark">This is still considered an acceptable range, and is associated with good health.
+</p>
+												</li>
+												<li class="list-group-item mt-2 py-1">
+													<h6  class="text-primary">If your BMI is
+														<mark class="bg-warning text-white">between 25 and 30:</mark> Overweight
+													</h6>
+													<p class="mt-2 text-dark">You are considered overweight and should finds ways to lower your weight, through diet and exercise.
+</p>
+												</li>
+												<li class="list-group-item mt-2 py-1">
+													<h6 class="text-primary">If your BMI is
+														<mark class="bg-danger text-white">over 30:</mark> Significantly Overweight
+													</h6>
+													<p class="mt-2 text-dark">This indicates an unhealthy condition,You should lose weight by changing your diet and exercising more.
+</p>
+												</li>
+												<li class="list-group-item mt-2 py-1">
+													<h6 class="text-primary">If your BMI is
+														<mark class="bg-danger text-white">over 40:</mark> Dangerously Overweight
+													</h6>
+													<p class="mt-2 text-dark">A BMI over 40 is dangerously overweight and puts you at severe risk of health issues. Losing some weight could save your life by changing your diet and exercising more..
+</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container mt-5">
+						<div class="row mttp">
+							<div class="col-md-9 col-xl-9 col-lg-9 col-sm-12 m-auto mt-5">
+								<div id="accordion">
+									<div class="card py-2 mt-3" >
+										<div class="card-header crd-hd">
+											<a class="card-link" data-toggle="collapse" href="#collapseOne">
+                 Healthy Tips To gain normal weight From underweight
+                  </a>
+										</div>
+										<div id="collapseOne" class="collapse" data-parent="#accordion">
+											<div class="card-body">
+												<h4 class=" mt-3">
+													<b>ways to gain weight if you are underweight</b>
+												</h4>
+												<p>
+													<img class="img-fluid mt-2" src="{{url_for('static', filename='images/Ashu-on-page-blog-img-3.jpg')}}" alt="Eating healthy helps reduce BMI" width="100%" height="280" data-pin-no-hover="true">
+													</p>
+													<p class="mt-3">Although being lean can often be healthy, being underweight can be a concern if it's the result of poor nutrition or if you are pregnant or have other health concerns. So, if you're underweight, see your doctor or dietitian for an evaluation. Together, you can plan how to meet your goal weight.</p>
+													<h5 class="mt-3 py-3">
+														<b>Here are some healthy ways to gain weight when you're underweight:</b>
+													</h5>
+													<ul>
+														<li>1. Eat more frequently. When you're underweight, you may feel full faster.</li>
+														<li>2.Eat five to six smaller meals during the day rather than two or three large meals.</li>
+														<li>Choose nutrient-rich foods
+															<p>
+																<img class="img-fluid mt-3" src="{{url_for('static', filename='images/1080.jpg')}}"  alt="Eating healthy helps reduce BMI" width="100%" height="280" data-pin-no-hover="true">
+																</p>
+																<ul class="mt-2">
+																	<li>whole-grain breads,</li>
+																	<li>pastas and cereals; </li>
+																	<li>fruits and vegetables;</li>
+																	<li>dairy products; </li>
+																	<li>lean protein sources; and nuts and seeds</li>
+																	<li> drink smoothies or healthy shakes made with milk and fresh or frozen fruit,and sprinkle in some ground flaxseed</li>
+																</ul>.
+															</li>
+															<li>Watch when you drink. Some people find that drinking fluids before meals blunts their appetite. In that case, it may be better to sip higher calorie beverages along with a meal or snack.For others, drinking 30 minutes after a meal, not with it, may work.</li>
+															<li>Make every bite count. Snack on nuts, peanut butter, cheese, dried fruits and avocados. </li>
+															<li>Have a bedtime snack, such as a peanut butter and jelly sandwich, or a wrap sandwich with avocado, sliced vegetables, and lean meat or cheese.</li>
+															<li>Top it off. Add extras to your dishes for more calories — such as cheese in casseroles and scrambled eggs, and fat-free dried milk in soups and stews.</li>
+															<li>Have an occasional treat. Even when you're underweight, be mindful of excess sugar and fat.</li>
+															<li>An occasional slice of pie with ice cream is OK. But most treats should be healthy and provide nutrients in addition to calories. Bran muffins, yogurt and granola bars are good choices.</li>
+															<li>
+																<b>Exercise.</b>
+																<p>
+																	<img src="{{url_for('static', filename='images/Exercise-regularly-to-keep-your-heart-healthy.jpg')}}" class="img-fluid mt-3" alt="Eating healthy helps reduce BMI" width="100%" height="280" data-pin-no-hover="true">
+																	</p>
+
+                              Exercise, especially strength training, can help you gain weight by building up your muscles. Exercise may also stimulate your appetite.
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="card py-2 mt-3">
+													<div class="card-header crd-hd">
+														<a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                  Healthy Tips To Reduce weight From Overweight
+                  </a>
+													</div>
+													<div id="collapseTwo" class="collapse" data-parent="#accordion">
+														<div class="card-body">
+															<h2 id="ways-to-reduce-bmi">
+																<b>Ways to reduce BMI</b>
+															</h2>
+															<p>Today, there are many people who have a high BMI, which puts them at risk of various health complications. If you are among these people, then it is important that you work towards reducing your body mass index. This, in turn, will help one live a healthy life.</p>
+															<p>Below, we discuss some steps you can take in order to reduce your BMI and attain a healthy and normal BMI range.</p>
+															<h3 class="text-primary">1. Follow a healthy diet</h3>
+															<ul>
+																<li>Make half your plate fruits and vegetables. ...</li>
+																<li>Make half the grains you eat whole grains. ...</li>
+																<li>Switch to fat-free or low-fat (1%) milk. ...</li>
+																<li>Choose a variety of lean protein foods. ...</li>
+																<li>Compare sodium in foods. ...</li>
+																<li>Drink water instead of sugary drinks. ...</li>
+																<li>Eat some seafood. ...</li>
+																<li>Cut back on solid fats. </li>
+															</ul>
+															<p>
+																<img class="img-fluid mt-2" src="{{url_for('static', filename='images/Heart_Foundation_dietary_advice_WEBSITE.png')}}" alt="Eating healthy helps reduce BMI" width="100%" height="280" data-pin-no-hover="true">
+																</p>
+																<h3 class="text-primary mt-2">2. Don’t skip breakfast and eat on time</h3>
+																<p>If you forgo your breakfast you extend this fast which might impact your metabolism. You should have breakfast within two hours of waking up. Those who skip breakfast tend to eat more portions of food in the next meal. Consuming a healthy breakfast restores the glucose levels in the body and lowers stress levels</p>
+																<h3 class="text-primary mt-2">3. Exercise regularly</h3>
+																<p>Exercise helps people lose weight and lower the risk of some diseases. Exercising regularly lowers a person's risk of developing some diseases, including obesity, type 2 diabetes, and high blood pressure. Exercise also can help keep your body at a healthy weight.</p>
+																<h3 class="text-primary mt-2">4. Make sure to drink plenty of water</h3>
+																<p>If you think you need to be drinking more, here are some tips to increase your fluid intake and reap the benefits of water: Have a beverage with every snack and meal. Choose beverages you enjoy; you're likely to drink more liquids if you like the way they taste. Eat more fruits and vegetables</p>
+																<img class="img-fluid mt-2"  src="{{url_for('static', filename='images/5-glasses-of-water.jpg')}}" alt="Drinking water helps reduce BMI" width="100%" height="280" data-pin-no-hover="true">
+																	<p></p>
+																	<h3 class="text-primary mt-2">5. Cut down your alcohol consumption</h3>
+																	<p>If you don’t want a beer belly, you need to cut down your alcohol consumption. Alcohol of any kind, not just beer, contains lots of calories. So, while trying to attain an ideal BMI, alcohol is not your best friend. In fact, a glass of wine contains as many calories as a chocolate piece.</p>
+																	<p>While you try to reduce the number that the BMI calculator shows you, don’t forget that seeking help and advice from doctors, physicians and/or dietitians is very important. They will be able to give you a better understanding of your condition and help you get where you want to be.</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<hr>
+														<p class="text-secontry">
+															<small>Designed And Developed By Neelam Hargunani</small>
+														</p>
+														<hr>
+														</div>
+													</div>
+												</div>
+											</div>
+</div><!--end of wrap-->
+
+{% endblock %}
