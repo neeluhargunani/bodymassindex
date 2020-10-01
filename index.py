@@ -2,20 +2,20 @@ from flask import Flask, render_template, request
 import pymysql
 
 
-# class Database:
-#     def __init__(self):
-#         host = "localhost"
-#         user = "root"
-#         password = "webcreationz@1234"
-#         database = "db1"
-#         self.con = pymysql.connect(host=host, user=user, password=password,
-#                                    database=database, cursorclass=pymysql.cursors.DictCursor)
-#         self.cur = self.con.cursor()
-#
-#     def bmi_height(self):
-#         self.cur.execute("SELECT * FROM bmiheight")
-#         result = self.cur.fetchall()
-#         return result
+class MyClass():
+    def __init__(self):
+        host = "localhost"
+        user = "root"
+        password = "webcreationz@1234"
+        database = "db1"
+        self.con = pymysql.connect(host=host, user=user, password=password,
+                                   database=database, cursorclass=pymysql.cursors.DictCursor)
+        self.cur = self.con.cursor()
+
+    def bmi_height(self):
+        self.cur.execute("SELECT * FROM bmiheight")
+        result = self.cur.fetchall()
+        return result
 app = Flask(__name__)
 
 
@@ -36,14 +36,14 @@ def calculator():
 
 
 
-    # def db_query():
-    #     db = Database()
-    #     bmih = db.bmi_height()
-    #     return bmih
-    #
-    # res = db_query()
+    def db_query():
+        db = MyClass()
+        bmih = db.bmi_height()
+        return bmih
 
-    return render_template("index.html", bmi=bmi)
+    res = db_query()
+
+    return render_template("index.html", bmi=bmi, results=res)
 
 
 if __name__ == '__main__':

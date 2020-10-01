@@ -67,33 +67,150 @@
 									<h4 class="mt-3">height In cms </h4>
 									<div class ="table-responsive">
 										<table class="table table-striped">
-											<thead class="crd">
-												<tr>
-													<th>ftin</th>
-													<th>inches</th>
-													<th>centimeters</th>
-												</tr>
-											</thead>
-                                           {% if results  %}
-
-
-											<tbody>
-                                                {% for row in results %}
-
-
-												<tr>
-													<td>{{row.ftin }}</td>
-													<td>{{row.inches }}</td>
-													<td>{{row.centimeters }}</td>
-												</tr>
-                                             {% endfor %}
-
-
-											</tbody>
-
-                                            {% endif %}
-
-
+                                             <thead class="crd">
+      <tr>
+        <th>ft in</th>
+        <th>inches</th>
+        <th>centimeters</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr>
+        <td> 5’0”</td>
+        <td>60in</td>
+        <td>152.40cm</td>
+      </tr>
+      <tr>
+        <td>5’1”</td>
+        <td>61in</td>
+        <td>154.94cm</td>
+      </tr>
+      <tr>
+        <td>5’2”</td>
+        <td>62in</td>
+        <td>157.48cm</td>
+      </tr>
+     <tr>
+        <td>5’3”</td>
+        <td>63in</td>
+        <td>160.02cm</td>
+      </tr>
+      <tr>
+        <td>5’4”</td>
+        <td>64in</td>
+        <td>162.56cm</td>
+      </tr>
+    <tr>
+        <td>5’5”</td>
+        <td>65in</td>
+        <td>165.10cm</td>
+      </tr>
+      <tr>
+        <td>5’6”</td>
+        <td>66in</td>
+        <td>167.74cm</td>
+      </tr>
+    <tr>
+        <td>5’7”</td>
+        <td>67in</td>
+        <td>170.18cm</td>
+      </tr>
+     <tr>
+        <td>5’8”</td>
+        <td>68in</td>
+        <td>172.72cm</td>
+      </tr>
+    <tr>
+        <td>5’9”</td>
+        <td>69in</td>
+        <td>175.26cm</td>
+      </tr>
+    <tr>
+        <td>5’10”</td>
+        <td>70in</td>
+        <td>177.80cm</td>
+      </tr>
+      <tr>
+        <td>5’11”</td>
+        <td>71in</td>
+        <td>180.34cm</td>
+      </tr>
+    <tr>
+        <td>6’0”</td>
+        <td>72in</td>
+        <td>182.88cm</td>
+      </tr>
+      <tr>
+        <td>6’1”</td>
+        <td>73in</td>
+        <td>185.45cm</td>
+      </tr>
+    <tr>
+        <td> 6’2”</td>
+        <td>74in</td>
+        <td>187.96cm</td>
+    </tr>
+    <tr>
+        <td> 6’3”</td>
+        <td>75in</td>
+        <td>190.50cm</td>
+    </tr>
+    <tr>
+        <td>6’4”</td>
+        <td>76in</td>
+        <td>193.04cm</td>
+    </tr>
+    <tr>
+        <td>6’5”</td>
+        <td>77in</td>
+        <td>195.58cm</td>
+    </tr>
+     <tr>
+        <td>6’6”</td>
+        <td>78in</td>
+        <td>198.12cm</td>
+    </tr>
+      <tr>
+        <td>6’7”</td>
+        <td>79in</td>
+        <td>200.66cm</td>
+    </tr>
+<tr>
+        <td>6’8”</td>
+        <td>80in</td>
+        <td>203.20cm</td>
+    </tr>
+    <tr>
+        <td>6’9”</td>
+        <td>81in</td>
+        <td>205.74cm</td>
+    </tr>
+     <tr>
+        <td>6’10”</td>
+        <td>82in</td>
+        <td>208.28cm</td>
+    </tr>
+      <tr>
+        <td>6’11”</td>
+        <td>83in</td>
+        <td>210.82cm</td>
+    </tr>
+     <tr>
+        <td>7’0”</td>
+        <td>84in</td>
+        <td>213.36cm</td>
+    </tr>
+     <tr>
+        <td>7’1”</td>
+        <td>85in</td>
+        <td>215.90cm</td>
+    </tr>
+     <tr>
+        <td>7’2”</td>
+        <td>86in</td>
+        <td>218.44cm</td>
+    </tr>
+    </tbody>
 
 
 										</table>
