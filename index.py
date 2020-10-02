@@ -5,11 +5,11 @@ import pymysql
 class MyClass():
     def __init__(self):
         DATABASE_URL = "postgres://pxeagzzqrittck:002452867f3a7363d45f46988ec54556c0f4f64872e6bb01555dac64bcaab86f@ec2-3-81-240-17.compute-1.amazonaws.com:5432/dbe706vtsuof73"
-        host = "weightcalculator.herokuapp.com/"
+        host = "localhost"
         user = "root"
         password = "webcreationz@1234"
         database = "db1"
-        self.con = pymysql.connect(host=host, user=user, password=password,
+        self.con = pymysql.connect(DATABASE_URL=DATABASE_URL,host=host, user=user, password=password,
                                    database=database, cursorclass=pymysql.cursors.DictCursor)
         self.cur = self.con.cursor()
 
