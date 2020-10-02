@@ -4,7 +4,7 @@ import pymysql
 
 class MyClass():
     def __init__(self):
-        host = "https://weightcalculator.herokuapp.com/"
+        host = "/"
         user = "root"
         password = "webcreationz@1234"
         database = "db1"
