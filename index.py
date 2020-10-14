@@ -34,15 +34,6 @@ def calculator():
         else:
             bmi = f"Hello {name} Your {bmi} weight is overweight..! you need to follow the healthy tips below"
 
-
-    #
-    # def db_query():
-    #     db = MyClass()
-    #     bmih = db.bmi_height()
-    #     return bmih
-    #
-    # res = db_query()
-
     return render_template("index.html", bmi=bmi)
 
 
