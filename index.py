@@ -1,21 +1,5 @@
 from flask import Flask, render_template, request
-import pymysql
 
-
-# class MyClass():
-#     def __init__(self):
-#         host = "localhost"
-#         user = "root"
-#         password = "webcreationz@1234"
-#         database = "db1"
-#         self.con = pymysql.connect(host=host, user=user, password=password,
-#                                    database=database, cursorclass=pymysql.cursors.DictCursor)
-#         self.cur = self.con.cursor()
-#
-#     def bmi_height(self):
-#         self.cur.execute("SELECT * FROM bmiheight")
-#         result = self.cur.fetchall()
-#         return result
 app = Flask(__name__)
 
 
